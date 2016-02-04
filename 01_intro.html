@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/dojo/1.10.1/dojo/dojo.js"></script>
+
+    <link href="https://ajax.googleapis.com/ajax/libs/dojo/1/dijit/themes/claro/claro.css" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Intro to Dojo</title>
+</head>
+<body class="claro" style="height: 500px;width: 100%;">
+    <div data-dojo-type="dijit/layout/BorderContainer" style="height: 100%;width: 100%;">
+        <div data-dojo-type="dijit/layout/ContentPane"
+             data-dojo-props="region: 'top'">
+            <div data-dojo-type="dijit/MenuBar">
+                <div data-dojo-type="dijit/PopupMenuBarItem">
+                    <span>File</span>
+                    <div data-dojo-type="dijit/DropDownMenu">
+                        <div data-dojo-type="dijit/MenuItem">Open</div>
+                        <div data-dojo-type="dijit/MenuItem">Save</div>
+                        <div data-dojo-type="dijit/PopupMenuItem">
+                            <span>Recent...</span>
+                            <div data-dojo-type="dijit/MenuItem">Recent Item 1</div>
+                            <div data-dojo-type="dijit/MenuItem">Recent Item 2</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center'">
+            <div data-dojo-type="dijit/Editor"></div>
+        </div>
+        <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'right'">
+            <h1 id="source">Dojo can interrogate the DOM</h1>
+            <h2 id="destination"></h2>
+            <span id="gitHubData"></span>
+        </div>
+    </div>
+    <script src="01_intro.js"></script>
+</body>
+</html>
