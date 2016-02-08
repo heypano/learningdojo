@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Basic App</title>
+    <!-- This should be on every page? -->
+    <script type="text/javascript">
+        var dojoConfig = {
+            async: true, //AMD API - used for old dojo apps
+            packages: [
+                {
+                    name: "app",
+                    location: "http://localhost:63342/learning-dojo/app", // If you have a relative path this will go to ajax.googleapis instead
+                }
+            ]
+        }
+    </script>
+    <script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js"></script>
+    <!-- -->
+</head>
+<body>
+    <h1>Login Form</h1>
+    <form id="loginForm">
+        <label>Employee Number</label>
+        <input type="text" id="employeeNumber" />
+    </form>
+
+    <h1>Expense Report Form</h1>
+    <div id="tripPurposeError"></div>
+    <form id="expenseReportForm">
+        <label>Trip Purpose</label>
+        <input type="text" id="tripPurpose" />
+    </form>
+    <div class="expense-item row">
+
+    </div>
+
+
+
+    <script type="text/javascript">
+        require(["app/02_basic_app"], function(){ });
+    </script>
+</body>
+</html>
