@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        dojoConfig = {
+            baseUrl: "/js", // The base URL prepended to a module identifier when converting it to a path or URL.
+            packages: [ {
+                name: "panomodules",
+                location: "/learning-dojo/dojotoolkit_tutorial/panomodules",
+            } ],
+            async: true,
+            parseOnLoad: true,
+        }
+    </script>
+    <script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js"></script>
+    <script>
+        require([
+            "dojo/dom",
+            "panomodules/firstmodule",
+            "dojo/text!/learning-dojo/dojotoolkit_tutorial/resources/text/test.txt"
+            ], function(dom, firstmodule, loadedtext){
+                firstmodule.setLoadedText(loadedtext);
+        })
+    </script>
+</head>
+<body>
+    <span>This text is loaded from a file...or is it?</span>
+    <div id="loadedText"></div>
+</body>
+</html>

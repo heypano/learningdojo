@@ -13,7 +13,7 @@
 // DOM manipulation: dojo/dom and dojo/dom-construct
 
 require([
-    'dojo/dom',
+    '../js/libraries/dojo/dojo/dom',
     'dojo/dom-construct'
 ], function (dom, domConstruct) {
     var greetingNode = dom.byId('greeting');
@@ -40,7 +40,7 @@ var dojoConfig = {
 // Plugins are special AMD modules that have functionality that activates with an exclamation point -- All you have to do is include it as a dependency
 
 require([
-    'dojo/dom',
+    '../js/libraries/dojo/dojo/dom',
     'dojo/domReady!'
 ], function (dom) {
     var greeting = dom.byId('greeting');
@@ -52,7 +52,7 @@ require([
 // Visual effects
 
 require([
-    'dojo/dom',
+    '../js/libraries/dojo/dojo/dom',
     'dojo/fx',
     'dojo/domReady!'
 ], function (dom, fx) {

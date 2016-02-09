@@ -23,8 +23,16 @@
 // dojo/dom-construct construct place and destroy elements create(), toDom() (takes a string), place() to place DOM nodes (e.g. after/last), empty(), destroy()
 // dojo/domReady! ! means exclamation point, looks for special load method in module definition (returns results as argument to callback) - no result for domReady! though
 
+// dojo/text!{path} takes an argument that is a URL (absolute or relative) and will return text content for that file in a variable
+// If you include "require" in the module definition it makes it so that relative paths will work correctly
 
-// Validation
+// Validation - You can use custom attributes
+// data-type
+// data-min
+// data-max
+
+
+
 define(["dojo/on", "dojo/dom", "dojo/query", "dojo/dom-construct", "dojo/domReady!"],
     function (on, dom, query, domConstruct){
         setupLoginFormValidation();
