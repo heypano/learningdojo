@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Dojo Ecosystem</title>
+    <link href="//ajax.googleapis.com/ajax/libs/dojo/1.10.4//dijit/themes/claro/claro.css" rel="stylesheet" />
     <script>
         dojoConfig = {
             packages: [ {
@@ -10,30 +11,40 @@
                 location: "/learning-dojo/app",
             } ],
             async: true,
-            parseOnLoad: true,
+            // parseOnLoad: true,
         }
     </script>
     <script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js"></script>
     <script>
         require([
-            "app/04_dijit"
-        ],function(panodijit){
-            panodijit.put("Yo","editableDiv");
+            "app/04_dijit",
+            "dojo/parser",
+        ],function(panodijit, parser){
+            // panodijit.put("Yo","editableDiv");
         })
     </script>
+    <style>
+        body{
+            opacity: 0; /* Use this to make sure nothing is visible before things load BUT THERE IS A  */
+        }
+    </style>
 </head>
-<body>
-<h1>Just testing</h1>
-<div id="editableDiv">Simple Stuff</div>
-<div class="column">
-    <div class="row">
-        <input
-                data-type="currency"
-                data-min="0.01"
-                data-max="60"
-                data-name="Meal"
-        />
-    </div>
-</div>
+<body class="claro">
+    <form data-dojo-type="dijit/form/Form" id="panoform">
+        <div class="column">
+            <div class="row">
+                <input name="EmployeeNumber" data-dojo-type="dijit/form/NumberTextBox" data-dojo-props="
+                    constraints: {
+                        min: 10000,
+                        max: 99999,
+                        pattern: '#'
+                    },
+                    rangeMessage: 'A 5 dijit number is required'
+                "/>
+            </div>
+        </div>
+        <!-- <button type="submit" data-dojo-type="dijit/form/Button"> Submit </button> -->
+        <button data-dojo-type="dijit/form/Button" id="gimmeADialog">Gimme a Dialog</button>
+    </form>
 </body>
 </html>
