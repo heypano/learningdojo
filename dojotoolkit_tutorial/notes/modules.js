@@ -99,10 +99,33 @@ define([
  */
 
 // Used when you load a string from a file. Value will be cached. The builder will inline strings loaded using dojo/text!
+define([
+    "dojo/_base/declare",
+    "dijit/_WidgetBase",
+    "dijit/_TemplatedMixin",
+    "dojo/text!./templates/NavBar.html"
+], function(declare, _WidgetBase, _TemplatedMixin, template){
+    return declare([_WidgetBase, _TemplatedMixin], {
+        // template contains the content of the file "my/widget/templates/NavBar.html"
+        templateString: template
+    });
+});
 
 /*
  * dojo/i18n
  */
+
+// dojo/i18n loads language resource bundles according to the web browser's user locale. Its usage looks like this:
+// in "my/widget/Dialog.js"
+define([
+    "dojo/_base/declare",
+    "dijit/Dialog",
+    "dojo/i18n!./nls/common"
+], function(declare, Dialog, i18n){
+    return declare(Dialog, {
+        title: i18n.dialogTitle
+    });
+});
 
 /*
  * dojo/has

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dojo Widgets</title>
+    <script>
+        dojoConfig = {
+            packages: [ {
+                name: "app",
+                location: "/learning-dojo/app",
+            } ],
+            async: true,
+            parseOnLoad: true,
+        }
+    </script>
+    <script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js"></script>
+    <script>
+        require([
+            "app/05_widgets"
+        ],function(widgets){
+            eco.put("Yo","editableDiv");
+        })
+    </script>
+</head>
+<body>
+<h1>Just testing</h1>
+<div id="editableDiv">Simple Stuff</div>
+</body>
+</html>

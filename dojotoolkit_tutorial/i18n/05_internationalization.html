@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Internationalization (i18n)</title>
+    <script>
+        dojoConfig = {
+            packages: [ {
+                name: "app",
+                location: "/learning-dojo/dojotoolkit_tutorial/i18n/app",
+            } ],
+            async: true,
+            parseOnLoad: true,
+        }
+    </script>
+    <script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js"></script>
+    <script>
+        require([
+            "dojo/on",
+            "dojo/dom",
+            "app/05_internationalization",
+            "dijit/form/Button",
+        ],function(on, dom, strings){
+            var englishButton = dom.byId("english_b");
+            var greekButton = dom.byId("greek_b");
+            var localizedText = dom.byId("localizedText");
+
+            on(englishButton ,"click",function(){ setLocale("en-us")} );
+            on(greekButton ,"click",function(){ setLocale("el-gr")} );
+
+            function setLocale(locale){
+                strings.setLocale(locale);
+                localizedText.textContent = strings.getLocalizedString('success');
+            }
+        })
+    </script>
+</head>
+<body>
+<h1>Let's see if this works:</h1>
+<button id="english_b" data-dojo-type="dijit/form/Button">English</button>
+<button id="greek_b"  data-dojo-type="dijit/form/Button">Greek</button>
+<br />
+<br />
+<div>The following text should be localized: </div>
+<br />
+<div id="localizedText"></div>
+</body>
+</html>
